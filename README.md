@@ -10,5 +10,5 @@ Simply set a few steps, scratchable latex lottery effect can be achieved;
     //设置代理
     luckView.delegate = self;
     [self.view addSubview:luckView];
-# Image
-https://github.com/woaichunchunma/Lottery/blob/master/Lottery/%E6%95%88%E6%9E%9C%E5%9B%BE.gif
+# demonstration
+https://github.com/woaichunchunma/Lottery/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE.gif
