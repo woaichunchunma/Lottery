@@ -159,7 +159,7 @@
         
         currentTime = result;
         self.time = 0.1;
-        stopTime = 63 + self.stopCount;
+        stopTime = 63 + self.stopCount % 8;
         [self.startBtn setEnabled:NO];
         [self.startBtn setImage:[UIImage imageNamed:@"subo"] forState:UIControlStateNormal];
         
