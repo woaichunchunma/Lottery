@@ -1,5 +1,6 @@
 # How To Use
-Simply set a few steps, scratchable latex lottery effect can be achieved
+Simply set a few steps, scratchable latex lottery effect can be achieved;
+//创建lotteryView
      LuckView *luckView = [[LuckView alloc] initWithFrame:CGRectMake(0, (ScreenHeight - ScreenWidth) * 0.5, ScreenWidth, ScreenWidth)];
     
     //网络图片
@@ -9,3 +10,5 @@ Simply set a few steps, scratchable latex lottery effect can be achieved
     //设置代理
     luckView.delegate = self;
     [self.view addSubview:luckView];
+# Image
+https://github.com/woaichunchunma/Lottery/blob/master/Lottery/%E6%95%88%E6%9E%9C%E5%9B%BE.gif
