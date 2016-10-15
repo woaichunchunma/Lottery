@@ -4,7 +4,8 @@
 //
 //  Created by apple on 16/4/28.
 //  Copyright © 2016年 xiaohaodong. All rights reserved.
-//
+// 如果在使用中遇到什么问题，请发送邮件到 “woaichunchunma2010@163.com”进行交流
+// QQ交流群：594257383
 
 #import "ViewController.h"
 #import "LuckView.h"
