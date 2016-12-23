@@ -10,6 +10,9 @@
 
 @protocol LuckViewDelegate <NSObject>
 
+typedef void (^luckBlock)(NSInteger result);
+typedef void (^luckBtnBlock)(UIButton *btn);
+
 - (void)luckViewDidStopWithArrayCount:(NSInteger)count;
 - (void)luckSelectBtn:(UIButton *)btn;
 
@@ -17,11 +20,19 @@
 
 @interface LuckView : UIView
 
+
+
 /**
  *  图片地址，网络获取
  */
 @property (strong, nonatomic) NSMutableArray *imageArray;
 @property (assign, nonatomic) int stopCount;
 @property (assign, nonatomic) id<LuckViewDelegate> delegate;
+@property (copy, nonatomic) luckBlock luckResultBlock;
+@property (copy, nonatomic) luckBtnBlock luckBtn;
+
+
+- (void)getLuckResult:(luckBlock)luckResult;
+- (void)getLuckBtnSelect:(luckBtnBlock)btnBlock;
 
 @end

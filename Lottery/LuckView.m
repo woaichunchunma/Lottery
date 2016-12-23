@@ -166,6 +166,7 @@
         startTimer = [NSTimer scheduledTimerWithTimeInterval:self.time target:self selector:@selector(start:) userInfo:nil repeats:YES];
         
     } else {
+        self.luckBtn(btn);
         if ([self.delegate respondsToSelector:@selector(luckSelectBtn:)]) {
             [self.delegate luckSelectBtn:btn];
         }
@@ -184,8 +185,13 @@
         [timer invalidate];
         [self.startBtn setEnabled:YES];
         [self.startBtn setImage:[UIImage imageNamed:@"sub"] forState:UIControlStateNormal];
-        result = currentTime%self.btnArray.count;
-        [self stopWithCount:currentTime%self.btnArray.count];
+        result = currentTime % self.btnArray.count;
+        
+        [self stopWithCount:result];
+        if (self.luckResultBlock != nil) {
+            self.luckResultBlock(result);
+        }
+        
         
         return;
     }
@@ -219,6 +225,12 @@
 }
 
 
+- (void)getLuckResult:(luckBlock)luckResult {
+    self.luckResultBlock = luckResult;
+}
 
+- (void)getLuckBtnSelect:(luckBtnBlock)btnBlock {
+    self.luckBtn = btnBlock;
+}
 
 @end

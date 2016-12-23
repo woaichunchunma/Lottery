@@ -29,9 +29,19 @@
     luckView.imageArray = [@[@"http://st.depositphotos.com/1842549/2870/i/950/depositphotos_28700059-Green-square-shiny-icon.jpg",@"http://st.depositphotos.com/1842549/2869/i/950/depositphotos_28699735-Green-square-shiny-icon.jpg",@"http://st.depositphotos.com/1842549/2870/i/950/depositphotos_28700445-Green-square-shiny-icon.jpg",@"http://st.depositphotos.com/1842549/2870/i/950/depositphotos_28700229-Green-square-shiny-icon.jpg",@"http://www.iconpng.com/png/boxed_metal_icons/gamecenter.png",@"http://www.iconpng.com/png/boxed_metal_icons/line.png",@"http://www.iconpng.com/png/boxed_metal_icons/internet_explorer.png",@"http://www.iconpng.com/png/boxed_metal_icons/gps.png"]mutableCopy];
     //指定抽奖结果,对应数组中的元素
     luckView.stopCount = arc4random()%luckView.imageArray.count;
+    
+    
+    //block用法获取结果
+    [luckView getLuckResult:^(NSInteger result) {
+        NSLog(@"抽到了第%ld个",result);
+    }];
+    //block用法监听点击
+    [luckView getLuckBtnSelect:^(UIButton *btn) {
+        NSLog(@"点击了数组中的第%ld个元素",btn.tag);
+    }];
     NSLog(@"stopCount = %d",luckView.stopCount);
     //设置代理
-    luckView.delegate = self;
+    //luckView.delegate = self;
     [self.view addSubview:luckView];
 }
 
