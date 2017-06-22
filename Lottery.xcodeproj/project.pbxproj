@@ -15,7 +15,6 @@
 		1866C9BB1CD1A66F00AEB89A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1866C9B91CD1A66F00AEB89A /* LaunchScreen.storyboard */; };
 		1866C9C61CD1A67000AEB89A /* LotteryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866C9C51CD1A67000AEB89A /* LotteryTests.m */; };
 		1866C9D11CD1A67000AEB89A /* LotteryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866C9D01CD1A67000AEB89A /* LotteryUITests.m */; };
-		1866C9E01CD1A6AD00AEB89A /* LuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866C9DF1CD1A6AD00AEB89A /* LuckView.m */; };
 		1866CA041CD1A70200AEB89A /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866C9E41CD1A70200AEB89A /* MKAnnotationView+WebCache.m */; };
 		1866CA051CD1A70200AEB89A /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866C9E61CD1A70200AEB89A /* NSData+ImageContentType.m */; };
 		1866CA061CD1A70200AEB89A /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866C9E81CD1A70200AEB89A /* SDImageCache.m */; };
@@ -43,6 +42,7 @@
 		1866CA2D1CD1B0EA00AEB89A /* sub@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866CA231CD1B0EA00AEB89A /* sub@3x.png */; };
 		1866CA2E1CD1B0EA00AEB89A /* subo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866CA241CD1B0EA00AEB89A /* subo@2x.png */; };
 		1866CA2F1CD1B0EA00AEB89A /* subo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1866CA251CD1B0EA00AEB89A /* subo@3x.png */; };
+		881243061EFB6C230030529E /* LuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881243051EFB6C230030529E /* LuckView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +79,6 @@
 		1866C9CC1CD1A67000AEB89A /* LotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1866C9D01CD1A67000AEB89A /* LotteryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryUITests.m; sourceTree = "<group>"; };
 		1866C9D21CD1A67000AEB89A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1866C9DE1CD1A6AD00AEB89A /* LuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckView.h; sourceTree = "<group>"; };
-		1866C9DF1CD1A6AD00AEB89A /* LuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckView.m; sourceTree = "<group>"; };
 		1866C9E11CD1A6D400AEB89A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1866C9E31CD1A70200AEB89A /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		1866C9E41CD1A70200AEB89A /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -127,6 +125,8 @@
 		1866CA231CD1B0EA00AEB89A /* sub@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sub@3x.png"; sourceTree = "<group>"; };
 		1866CA241CD1B0EA00AEB89A /* subo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "subo@2x.png"; sourceTree = "<group>"; };
 		1866CA251CD1B0EA00AEB89A /* subo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "subo@3x.png"; sourceTree = "<group>"; };
+		881243041EFB6C230030529E /* LuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuckView.h; sourceTree = "<group>"; };
+		881243051EFB6C230030529E /* LuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuckView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,10 +179,10 @@
 			children = (
 				1866CA1A1CD1B0C000AEB89A /* Image */,
 				1866C9E21CD1A70200AEB89A /* SDWebImage */,
-				1866C9DE1CD1A6AD00AEB89A /* LuckView.h */,
-				1866C9DF1CD1A6AD00AEB89A /* LuckView.m */,
 				1866CA171CD1A7E800AEB89A /* UIView+Extension.h */,
 				1866CA181CD1A7E800AEB89A /* UIView+Extension.m */,
+				881243041EFB6C230030529E /* LuckView.h */,
+				881243051EFB6C230030529E /* LuckView.m */,
 				1866C9AE1CD1A66F00AEB89A /* AppDelegate.h */,
 				1866C9AF1CD1A66F00AEB89A /* AppDelegate.m */,
 				1866C9B11CD1A66F00AEB89A /* ViewController.h */,
@@ -445,9 +445,9 @@
 				1866CA0D1CD1A70200AEB89A /* UIButton+WebCache.m in Sources */,
 				1866CA041CD1A70200AEB89A /* MKAnnotationView+WebCache.m in Sources */,
 				1866CA051CD1A70200AEB89A /* NSData+ImageContentType.m in Sources */,
-				1866C9E01CD1A6AD00AEB89A /* LuckView.m in Sources */,
 				1866CA0B1CD1A70200AEB89A /* SDWebImageManager.m in Sources */,
 				1866CA081CD1A70200AEB89A /* SDWebImageDecoder.m in Sources */,
+				881243061EFB6C230030529E /* LuckView.m in Sources */,
 				1866CA061CD1A70200AEB89A /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

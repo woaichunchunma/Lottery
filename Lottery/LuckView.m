@@ -17,15 +17,6 @@
     int currentTime;
     int stopTime;
     int result;
-    
-    UIButton *btn1;
-    UIButton *btn2;
-    UIButton *btn3;
-    UIButton *btn4;
-    UIButton *btn5;
-    UIButton *btn6;
-    UIButton *btn7;
-    UIButton *btn0;
 }
 
 @property (strong , nonatomic) UIImageView *iv;
@@ -84,7 +75,6 @@
     CGFloat upj = 5;
     CGFloat imageW = 10;
     CGFloat btnw = (self.width - imageW * 2 - j * 2 - upj * 2)/3;
-    CGFloat ivj = 5;
     
     for (int i = 0; i < imageArray.count + 1; i++) {
         UIButton *btn = [[UIButton alloc] init];
@@ -99,64 +89,27 @@
         [self.iv addSubview:btn];
         
         if (i == 4) {
-            [btn setTitle:@"开始" forState:UIControlStateNormal];
             btn.layer.cornerRadius = 10;
             [btn setImage:[UIImage imageNamed:@"sub"] forState:UIControlStateNormal];
             btn.tag = 10;
             self.startBtn = btn;
-            
             continue;
         }
         
         btn.tag = i > 4? i -1: i;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(ivj, ivj, btn.width - ivj * 2, btn.width - ivj * 2)];
-        [btn addSubview:imageView];
-        [imageView sd_setImageWithURL:[_imageArray objectAtIndex:i > 4? i -1: i] placeholderImage:[UIImage imageNamed:@"cjbj02"]];
-        
-        switch (i) {
-            case 0:
-                btn0 = btn;
-                break;
-            case 1:
-                btn1 = btn;
-                break;
-            case 2:
-                btn2 = btn;
-                break;
-            case 3:
-                btn3 = btn;
-                break;
-            case 5:
-                btn4 = btn;
-                break;
-            case 6:
-                btn5 = btn;
-                break;
-            case 7:
-                btn6= btn;
-                break;
-            case 8:
-                btn7 = btn;
-                break;
-
-                
-            default:
-                
-                break;
-        }
-        
+        btn.layer.borderWidth = 5;
+        btn.layer.borderColor = [UIColor clearColor].CGColor;
+        [btn sd_setImageWithURL:[_imageArray objectAtIndex:i > 4? i -1: i] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"cjbj02"]];
+        btn.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
         [self.btnArray addObject:btn];
     }
-    
-    [self TradePlacesWithBtn1:btn3 btn2:btn4];
-    [self TradePlacesWithBtn1:btn4 btn2:btn7];
-    [self TradePlacesWithBtn1:btn5 btn2:btn6];
+    [self tradePlacesWithBtn1:self.btnArray[3] btn2:self.btnArray[4]];
+    [self tradePlacesWithBtn1:self.btnArray[4] btn2:self.btnArray[7]];
+    [self tradePlacesWithBtn1:self.btnArray[5] btn2:self.btnArray[6]];
 }
 
 - (void)btnClick:(UIButton *)btn {
     if (btn.tag == 10) {
-        //点击开始抽奖
-        
         currentTime = result;
         self.time = 0.1;
         stopTime = 63 + self.stopCount % 8;
@@ -175,10 +128,10 @@
 
 - (void)start:(NSTimer *)timer {
     UIButton *oldBtn = [self.btnArray objectAtIndex:currentTime % self.btnArray.count];
-    oldBtn.backgroundColor = [UIColor clearColor];
+    oldBtn.layer.borderColor = [UIColor clearColor].CGColor;
     currentTime++;
     UIButton *btn = [self.btnArray objectAtIndex:currentTime % self.btnArray.count];
-    btn.backgroundColor = [UIColor orangeColor];
+    btn.layer.borderColor = [UIColor orangeColor].CGColor;
     
     
     if (currentTime > stopTime) {
@@ -191,16 +144,12 @@
         if (self.luckResultBlock != nil) {
             self.luckResultBlock(result);
         }
-        
-        
         return;
     }
    
     if (currentTime > stopTime - 10) {
         self.time += 0.1;
-        
         [timer invalidate];
-        
         startTimer = [NSTimer scheduledTimerWithTimeInterval:self.time target:self selector:@selector(start:) userInfo:nil repeats:YES];
     }
 }
@@ -213,7 +162,7 @@
 }
 
 
-- (void)TradePlacesWithBtn1:(UIButton *)firstBtn btn2:(UIButton *)secondBtn {
+- (void)tradePlacesWithBtn1:(UIButton *)firstBtn btn2:(UIButton *)secondBtn {
     CGRect frame = firstBtn.frame;
     firstBtn.frame = secondBtn.frame;
     secondBtn.frame = frame;

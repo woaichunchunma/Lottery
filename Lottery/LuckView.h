@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol LuckViewDelegate <NSObject>
-
 typedef void (^luckBlock)(NSInteger result);
 typedef void (^luckBtnBlock)(UIButton *btn);
 
+@protocol LuckViewDelegate <NSObject>
 - (void)luckViewDidStopWithArrayCount:(NSInteger)count;
 - (void)luckSelectBtn:(UIButton *)btn;
 

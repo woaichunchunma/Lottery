@@ -26,7 +26,7 @@
     LuckView *luckView = [[LuckView alloc] initWithFrame:CGRectMake(0, (ScreenHeight - ScreenWidth) * 0.5, ScreenWidth, ScreenWidth)];
     
     //网络图片地址
-    luckView.imageArray = [@[@"http://st.depositphotos.com/1842549/2870/i/950/depositphotos_28700059-Green-square-shiny-icon.jpg",@"http://st.depositphotos.com/1842549/2869/i/950/depositphotos_28699735-Green-square-shiny-icon.jpg",@"http://st.depositphotos.com/1842549/2870/i/950/depositphotos_28700445-Green-square-shiny-icon.jpg",@"http://st.depositphotos.com/1842549/2870/i/950/depositphotos_28700229-Green-square-shiny-icon.jpg",@"http://www.iconpng.com/png/boxed_metal_icons/gamecenter.png",@"http://www.iconpng.com/png/boxed_metal_icons/line.png",@"http://www.iconpng.com/png/boxed_metal_icons/internet_explorer.png",@"http://www.iconpng.com/png/boxed_metal_icons/gps.png"]mutableCopy];
+    luckView.imageArray = [@[@"http://pic48.nipic.com/file/20140912/7487939_223919315000_2.jpg",@"http://pic.58pic.com/58pic/13/60/97/48Q58PIC92r_1024.jpg",@"http://pic.jj20.com/up/allimg/911/0P316142450/160P3142450-4.jpg",@"http://img.taopic.com/uploads/allimg/140322/235058-1403220K93993.jpg",@"http://pic.58pic.com/58pic/15/36/02/06Q58PICH7S_1024.jpg",@"http://scimg.jb51.net/allimg/150713/14-150G31G222950.jpg",@"http://scimg.jb51.net/allimg/150618/14-15061Q13224641.jpg",@"http://pic.58pic.com/58pic/14/32/29/358PICv58PICx6y_1024.jpg"]mutableCopy];
     //指定抽奖结果,对应数组中的元素
     luckView.stopCount = arc4random()%luckView.imageArray.count;
     
